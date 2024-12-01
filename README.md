@@ -2,6 +2,7 @@
 
 This project is a **responsive profile page** developed with **Next.js** for the frontend framework, **Material-UI** components for functionality, and **Tailwind CSS** for layout and custom styling. The project is designed with performance, accessibility, and responsiveness in mind.
 
+
 ## Features
 - **Responsive Design:** Fully responsive layout that adapts to different screen sizes.
 - **Two Modes:**

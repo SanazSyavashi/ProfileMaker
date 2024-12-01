@@ -28,7 +28,6 @@ Install the required packages for the project
 
 npm install
 
-
 3. Run the project
 To start the development server, Run
 
