@@ -8,6 +8,7 @@ interface ReadFileResponse {
 }
 
 //----------------------------------------------------------
+//READING DATA WITH API CALL
 export const readFile = async (filename: string): Promise<Record<string, any>> => {
   try {
     const response = await fetch('/api/readFile', {

@@ -38,6 +38,7 @@ const ChipInput = (props: Props) => {
   const [inputValue, setInputValue] = useState<string>('');
   const [chips, setChips] = useState<string[]>(value);
 
+  //handle add chip
   const handleAddChip = () => {
     if (inputValue.trim() && !chips.includes(inputValue.trim())) {
       const updatedChips = [...chips, inputValue.trim()];
@@ -49,12 +50,14 @@ const ChipInput = (props: Props) => {
     }
   };
 
+  //set chips if default value exist
   useEffect(()=>{
     if (defaultValue && defaultValue.length > 0) {
       setChips(defaultValue);  
     }
   },[defaultValue])
 
+  //handle deleting chips
   const handleDeleteChip = (chipToDelete: string) => {
     const updatedChips = chips.filter((chip) => chip !== chipToDelete);
     setChips(updatedChips);
@@ -63,6 +66,7 @@ const ChipInput = (props: Props) => {
     }
   };
 
+  //handle clicking on Enter
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault();
@@ -70,6 +74,7 @@ const ChipInput = (props: Props) => {
     }
   };
 
+  //get helping text if exist to show error
   const getHelperText = () => {
     if (!error && !validationMessage) return helperText ?? '';
     if (!error) return validationMessage;

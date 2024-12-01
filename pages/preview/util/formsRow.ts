@@ -5,6 +5,9 @@ interface FormsRow {
   multiRow?: boolean; 
 }
 
+//---------------------------------------------------------
+
+//each row in preview form
 const formsRow: FormsRow[] = [
   {
     fileName: 'basicInfoForm.txt',

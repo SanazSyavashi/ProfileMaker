@@ -21,6 +21,7 @@ const GenericFormPage: React.FC<GenericFormPageProps> = ({ fileName }) => {
   const [defaultValues, setDefaultValues] = useState<Record<string, any>>();
   const fields=getFieldsByFileName(fileName)
   
+  //FETCH FIEL CONTENT BY FILE NAME
   const fetchFileContent = async () => {
     try {
       const content = await readFile(fileName);
@@ -32,11 +33,14 @@ const GenericFormPage: React.FC<GenericFormPageProps> = ({ fileName }) => {
     }
   };
 
+  //CALL FETCH FILE CONTENT ON FIRST OF LOAD AF EACH PAGE
   useEffect(() => {
     fetchFileContent();
+    //SHOW ERROR IF ERROR HAPPENED DURING AN API CALL
     console.log({ errorMessage });
   }, []);
 
+  //HANDLE SAVING DATA OF FORM
   const handleSave = async (data: Record<string, any>) => {
     try {
       const result = await saveFile(fileName, { content: data });
@@ -53,6 +57,7 @@ const GenericFormPage: React.FC<GenericFormPageProps> = ({ fileName }) => {
     }
   };
 
+  //HANDLE SUBMITING OF THE FORM
   const handleFormSubmit = (data: Record<string, any>) => {
     handleSave(data);
   };

@@ -1,5 +1,8 @@
+//DEPENDENCY
 import { FieldConfig } from "@/components/GeneralForm/GeneralForm";
+//-----------------------------------------------------------------
 
+//FIELDS OF PROFESSIONAL FORM WHICH LOAD DYNAMICALLY
 export const professionalFields : FieldConfig[]= [
   {
     name: 'job',

@@ -1,5 +1,8 @@
+//dependency
 import { FieldConfig } from "@/components/GeneralForm/GeneralForm";
+//---------------------------------------------------------------------
 
+//FIELDS OF PERSONAL FORM WHICH LOAD DYNAMICALLY
 export const personalFields:FieldConfig[] = [
   {
     name: 'name',

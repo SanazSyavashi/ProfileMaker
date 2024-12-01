@@ -37,6 +37,7 @@ const TextAreaInput = (props: Props): any => {
     name,
   } = props;
 
+  //handle change
   const handleChange = (
     e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
   ) => {
@@ -44,6 +45,8 @@ const TextAreaInput = (props: Props): any => {
       onChangeValue(e.target.value);
     }
   };
+
+  //get helper text if exist to show errors
   const getHelperText = () => {
     if (!error && !validationMessage) return helperText ?? '';
     if (!error) return validationMessage;

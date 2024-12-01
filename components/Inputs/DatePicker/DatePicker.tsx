@@ -50,6 +50,7 @@ export default function DatePicker(props: TProps) {
     helperText
   } = props;
   
+  //handle date changing
   const handleDateChange = (newValue: Dayjs | null) => {
     if (newValue) {
       if (newValue.isValid()) {
@@ -61,12 +62,14 @@ export default function DatePicker(props: TProps) {
       onChangeValue?.(null);
     }
   };
+
   const dayjsVal = useMemo(() => {
     const val = value ? dayjs(value) : defaultValue? dayjs(defaultValue):null;
     if (val?.isValid()) return val;
     return null;
   }, [value,defaultValue]);
 
+  //get helper text if exist to show errors
   const getHelperText = () => {
     if (dayjsVal && !dayjs(dayjsVal).isValid()) {
       return 'Enter a valid date';

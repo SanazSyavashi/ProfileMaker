@@ -36,6 +36,7 @@ const professionalRow: TRow[] = [
   { label: "LinkedIn Profile", name: "linkdin" }
 ];
 
+//get row type and return rows of forms dynamically
 const getRowByType = (type: 'social' | 'personal' | 'basic' | 'professional'): TRow[] => {
   switch (type) {
     case 'social':

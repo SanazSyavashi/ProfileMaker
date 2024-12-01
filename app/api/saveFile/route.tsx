@@ -1,6 +1,8 @@
+//NODE_MODULES
 import fs from 'fs';
 import path from 'path';
-
+// ----------------------------------------------------
+//SAMPLE API REQUEST TO SAVE DATA
 export async function POST(req: Request) {
   try {
     const { filename, data } = await req.json();

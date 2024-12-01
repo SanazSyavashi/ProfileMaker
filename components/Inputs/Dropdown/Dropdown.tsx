@@ -51,6 +51,7 @@ export default function Dropdown(props: Props) {
 
   //-----------------------------------------------------------------------------------
 
+  //get helper text if exist to show errors
   const getHelperText = () => {
     if (!error && !validationMessage) return helperText ?? '';
     if (!error) return validationMessage;

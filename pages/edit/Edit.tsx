@@ -13,6 +13,7 @@ import GenericFormPage from './util/GenericFormPage';
 const Edit: React.FC = () => {
 
 
+  // GET TABS CONTENT
   const getTabsContent: () => TTabControlContentData[] = () => {
     return tabConfigs.map((tab, index) => ({
       id: index,
@@ -24,6 +25,7 @@ const Edit: React.FC = () => {
     }));
   };
 
+  //TABS DATA
   const tabsData: Array<TTabControlTabData> = [
     {
       id: 0,

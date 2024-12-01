@@ -7,6 +7,7 @@ export type TDateRangePicker = {
   from: string | null;
   to: string | null;
 } | null;
+//---------------------------------------------------------------------------------
 
 export type TInputBaseProps<T = unknown, U = undefined, V = T> = {
   value?: T;
@@ -25,15 +26,15 @@ export type TInputBaseProps<T = unknown, U = undefined, V = T> = {
   name?: string;
   required?: boolean;
 };
-
+//-------------------------------------------------------------------------------
 export type TDropdownOptions = Array<{
   title?: string;
   key?: string;
   text?: string;
   value?: string | number | null;
-  isActive?: boolean;
-  
+  isActive?: boolean; 
 }>;
+//--------------------------------------------------------------------------------
 
 export type TAutoComplete =
   | 'name'
@@ -80,3 +81,4 @@ export type TAutoComplete =
   | 'sex'
   | 'url'
   | 'photo';
+//---------------------------------------------------------------------------------

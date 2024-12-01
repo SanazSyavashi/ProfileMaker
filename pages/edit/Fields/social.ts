@@ -1,5 +1,8 @@
+//DEPENDENCY
 import { FieldConfig } from "@/components/GeneralForm/GeneralForm";
+//----------------------------------------------------------------
 
+//FIELDS OF SOCIAL FORM WHICH LOAD DYNAMICALLY
 export const socialFields: FieldConfig[] = [
   {
     name: 'twitter',

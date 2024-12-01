@@ -1,8 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+// NODE-MODULES
+//-----------------------------------------------------------------
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+//------------------------------------------------------------------
 
+//TO MAKE SAMPLE REQUEST TO READ DATA
 export async function POST(req: Request) {
   const { filename }: { filename: string } = await req.json();
   if (!filename) {

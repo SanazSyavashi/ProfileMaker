@@ -1,5 +1,8 @@
+//DEPENDENCY
 import { GenericFormPageProps } from "./GenericFormPage";
+//-------------------------------------------------------------
 
+//CONFIG OF EACH TAB OF EDIT PART
 export const tabConfigs: GenericFormPageProps[] = [
   { fileName: "basicInfoForm.txt", title: "Basic Information" },
   { fileName: "personalInfoForm.txt", title: "Personal Information" },

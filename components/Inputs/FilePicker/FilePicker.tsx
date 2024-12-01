@@ -36,6 +36,7 @@ const FilePicker = (props: Props) => {
     multiple = false,
   } = props;
 
+  //handle changing
   const handleChange = (
     e: ChangeEvent<HTMLInputElement>,
   ) => {
@@ -45,6 +46,7 @@ const FilePicker = (props: Props) => {
     }
   };
 
+  //get helper text if exist to show errors
   const getHelperText = () => {
     if (!error && !validationMessage) return helperText ?? '';
     if (!error) return validationMessage;

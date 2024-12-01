@@ -32,6 +32,7 @@ const NumberInput = (props: Props) => {
     name,
   } = props;
 
+  //handle changing
   const handleChange = (
     e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
   ) => {
@@ -40,6 +41,7 @@ const NumberInput = (props: Props) => {
     }
   };
 
+  //get helper text if exist to show errors
   const getHelperText = () => {
     if (!error && !validationMessage) return helperText ?? '';
     if (!error) return validationMessage;

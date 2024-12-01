@@ -23,7 +23,7 @@ const Page = forwardRef<HTMLDivElement, PageProps>(({ children,title, meta,title
   </Box>
 ));
 
-
+//-------------------------------------------------------------------------------------
 interface PageProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
   title?:string;

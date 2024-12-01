@@ -5,7 +5,7 @@ import { useState, useCallback } from 'react';
 //DEPENDENCY
 import { readFile } from '@/pages/edit/util/readData';
 // -----------------------------------------------------------------------
-
+//this hook help to get data from api dynamically
 const useFileContent = (fileName: string) => {
   const [fileContent, setFileContent] = useState<Record<string, any>>({});  
   const [error, setError] = useState<string | null>(null);

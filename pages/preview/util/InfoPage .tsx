@@ -16,10 +16,12 @@ interface InfoPageProps {
   multiRow?: boolean; 
   title?:string
 }
+//----------------------------------------------------------
 
 const InfoPage = ({ fileName, type, multiRow = false ,title}: InfoPageProps) => {
   const { fileContent, fetchFileContent } = useFileContent(fileName);
 
+  
   useEffect(() => {
     fetchFileContent(); 
   }, [fetchFileContent]);

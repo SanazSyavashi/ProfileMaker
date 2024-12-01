@@ -40,7 +40,7 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSub
   const [isLoading, setIsLoading] = useState(false);
   const [isSnackbarOpen, setIsSnackbarOpen] = useState(false)
 
-
+//SET DEFAULT VALUE IN FORM
   useEffect(() => {
     if (defaultValues) {
       Object.keys(defaultValues).forEach((key) => {
@@ -49,6 +49,7 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSub
     }
   }, [defaultValues, setValue]);
 
+  //SUBMITING THE FORM
   const handleFormSubmit = (data: Record<string, any>) => {
     setIsLoading(true);
     onSubmit(data);
@@ -58,6 +59,7 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSub
     }, 2000);
   };
 
+  //CANCEL HANDLER
   const cancelHandler = () => {
     reset()
 
