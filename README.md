@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Profile Page with Next.js, Material-UI, and Tailwind CSS
 
-## Getting Started
+This project is a **responsive profile page** developed with **Next.js** for the frontend framework, **Material-UI** components for functionality, and **Tailwind CSS** for layout and custom styling. The project is designed with performance, accessibility, and responsiveness in mind.
 
-First, run the development server:
+## Features
+- **Responsive Design:** Fully responsive layout that adapts to different screen sizes.
+- **Two Modes:**
+  - **Edit Mode:** Allows the user to edit their profile details.
+  - **Preview Mode Mode:**:** Displays the profile in a read-only mode Displays to show how the completed profile looks.
+- **Tabs Navigation:** The profile page is divided into different sections with tabs to navigate between:
+  - Basic Information
+  - Personal Details
+  - Professional Details
+  - Social Media Links
+- **Material-UI Components:** Utilizes Material-UI components like `TextField`, `Avatar`, `Switch`, and `Button` for a clean and interactive UI.
+- **Tailwind CSS for Layout and Styling:** Tailwind is used for layout and custom styling to ensure a modern and responsive design.
+
+## Installation
+
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/SanazSyavashi/ProfileMaker.git
+cd profile-page-nextjs
+
+2. Install dependencies
+Install the required packages for the project
+
+npm install
+
+
+3. Run the project
+To start the development server, Run
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit http://localhost:3000 in your browser to see the profile page in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Usage
+Edit Mode: Toggle the mode with the button to switch between editing and previewing the profile details.
+Tabs Navigation: Use the tabs at the top to switch between different sections of the profile (Basic Information, Personal Details, Professional Details, Social Media Links).
+Form Fields: You can update fields like name, email, phone number, etc., in the edit mode.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Technologies Used
+Next.js: A React framework for building server-side rendered (SSR) and static web applications.
+Material-UI: A popular React UI framework with a set of pre-built components.
+Tailwind CSS: A utility-first CSS framework used for building custom designs quickly.
+React Hooks: For managing the component state (e.g., tab selection and edit mode).
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Acknowledgements
+Material-UI: For providing a set of components that speed up UI development.
+Tailwind CSS: For enabling a fast and efficient way of creating custom layouts and styles.
+Next.js: For providing a simple yet powerful framework to build modern React application
