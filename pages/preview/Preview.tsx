@@ -3,8 +3,8 @@ import CustomAvatar from '@/components/Avatar/Avatar';
 import formsRow from './util/formsRow';
 
 import SectionSeparator from '@/components/SectionSeparator/SectionSeparator';
-import InfoPage from './component/InfoPage ';
-import LinkEditButton from './component/LinkEditButton';
+import InfoPage from './components/InfoPage ';
+import LinkEditButton from './components/LinkEditButton';
 //------------------------------------------------------------------------------
 
 const Preview: React.FC = () => {

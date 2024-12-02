@@ -9,8 +9,7 @@ This project is a **responsive profile page** developed with **Next.js** for the
   - **Edit Mode:** Allows the user to edit their profile details.
   - **Preview Mode Mode:**:** Displays the profile in a read-only mode Displays to show how the completed profile looks.
 - **Tabs Navigation:** The profile page is divided into different sections with tabs to navigate between:
-  - Basic Information
-  - Personal Details
+  - Basic Information && Personal Details
   - Professional Details
   - Social Media Links
 - **Material-UI Components:** Utilizes Material-UI components like `TextField`, `Avatar`, `Switch`, and `Button` for a clean and interactive UI.
