@@ -8,8 +8,8 @@ const Row = ({ label, value }: rowProps) => {
 
   return (
     <Box className="flex w-8/12 flex-row justify-between my-10">
-      <Typography className="sm:font-semibold text-md md:font-bold text-lg ">{label}</Typography>
-      <Typography className="sm:text-md w-6/12 md:font-medium text-lg w-8/12">{displayValue}</Typography>
+      <Typography className="sm:font-normal text-base md:font-bold text-lg ">{label}</Typography>
+      <Typography className="sm:text-base w-4/12 md:font-medium text-lg w-8/12">{!!displayValue?displayValue:"-------------"}</Typography>
     </Box>
   )
 }

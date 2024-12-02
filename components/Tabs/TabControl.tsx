@@ -56,7 +56,7 @@ export default function TabControl(props: ITabControlProps) {
       className='w-full !h-max  '
       elevation={elevation}>
       <Box className='!mx-auto w-full h-full' width={'100%'} height={'100%'}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }} className="sticky top-0">
+        <Box sx={{ borderBottom: 1, borderColor: 'divider', zIndex: 1 }} className="sticky top-0">
           <Tabs value={value} onChange={handleChange} variant='fullWidth'>
             {tabsData.map(
               ({ id, className, tabLabel, isDisabled = false }) => {
