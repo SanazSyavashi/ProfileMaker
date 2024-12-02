@@ -13,7 +13,7 @@ const Page = forwardRef<HTMLDivElement, PageProps>(({ children,title, meta,title
     <Head>
       {meta}
     </Head>
-    <Box className="sm:my-16 flex h-20 text-md font-semibold my-5 flex-col w-full md:my-5 ">
+    <Box className="sm:my-16 flex h-20 text-md font-semibold my-15 flex-col w-full md:my-15 ">
       <Typography className={'text-3xl font-semibold'}>{title}</Typography>
       {titleComponent}
     </Box>
