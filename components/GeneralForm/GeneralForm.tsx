@@ -14,9 +14,9 @@ import Dropdown from '@/components/Inputs/Dropdown/Dropdown';
 import ChipInput from '@/components/Inputs/ChipInput/ChipInput';
 import NumberInput from '../Inputs/NumberInput/NumberInput';
 import TextAreaInput from '../Inputs/TextAreaInput/TextAreaInput';
-import GenericSnackbar from '../snackbar/GenericSnackbar';
 import LoadingComponent from '../Loading/LoadingComponent';
 import FilePicker from '../Inputs/FilePicker/FilePicker';
+import GenericSnackbar from '../Snackbar/GenericSnackbar';
 //-----------------------------------------------------------------
 
 export interface FieldConfig {

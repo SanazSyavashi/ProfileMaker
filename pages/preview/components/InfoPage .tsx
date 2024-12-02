@@ -7,7 +7,7 @@ import Page from "@/components/Pages/Page";
 import Row from "@/components/Row/Row";
 import MultiRow from "@/components/Row/MultiRow";
 import useFileContent from "../util/useFileContent";
-import getRowByType from "./getRowByType ";
+import getRowByType from "../util/getRowByType ";
 //-------------------------------------------------------
 
 interface InfoPageProps {

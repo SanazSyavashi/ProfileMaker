@@ -1,9 +1,10 @@
 // //DEPENDENCY
 import CustomAvatar from '@/components/Avatar/Avatar';
 import formsRow from './util/formsRow';
-import InfoPage from './util/InfoPage ';
-import LinkEditButton from './util/LinkEditButton';
+
 import SectionSeparator from '@/components/SectionSeparator/SectionSeparator';
+import InfoPage from './component/InfoPage ';
+import LinkEditButton from './component/LinkEditButton';
 //------------------------------------------------------------------------------
 
 const Preview: React.FC = () => {

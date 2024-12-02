@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 // Dependencies
 import GeneralForm from '@/components/GeneralForm/GeneralForm';
 import { saveFile } from '../util/saveData';
-import GenericSnackbar from '@/components/snackbar/GenericSnackbar';
+import GenericSnackbar from '@/components/Snackbar/GenericSnackbar';
 import { readFile } from '../util/readData';
-import getFieldsByFileName from '../Fields/getField';
+import getFieldsByFileName from '../fields/getField';
 // ---------------------------------------------------------------
 export interface GenericFormPageProps {
   fileName: string;

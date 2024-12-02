@@ -5,9 +5,9 @@ import React from 'react';
 import TabControl from '@/components/Tabs/TabControl';
 import { TTabControlContentData, TTabControlTabData } from '@/components/Tabs/types/tabControl';
 import { tabConfigs } from './util/tabConfigs';
-import LinkPreviewButton from './util/LinkPreviewButton';
 import Page from '@/components/Pages/Page';
-import GenericFormPage from './util/GenericFormPage';
+import GenericFormPage from './components/GenericFormPage';
+import LinkPreviewButton from './components/LinkPreviewButton';
 //----------------------------------------------------------
 
 const Edit: React.FC = () => {

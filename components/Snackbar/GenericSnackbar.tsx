@@ -2,8 +2,8 @@
 //NODE-MODULES
 import React from 'react';
 import Snackbar from '@mui/material/Snackbar';
-//IMP-DEPENDENCY
 import Alert from './Alert';
+//IMP-DEPENDENCY
 //---------------------------------------------------------------------------------
 type TSnackbarSeverity = 'error' | 'success' | 'warning' | 'info';
 type TGenericSnackbarProps = {
