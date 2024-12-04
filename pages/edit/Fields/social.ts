@@ -11,7 +11,7 @@ export const socialFields: FieldConfig[] = [
     rules: {
       required: {
         value: true,
-         message: "this field is req"
+         message: "Please fill out this field"
       }, 
     },
   },
@@ -22,18 +22,18 @@ export const socialFields: FieldConfig[] = [
     rules: {
       required: {
         value: true,
-         message: "this field is req"
+         message: "Please fill out this field"
       },
     },
   },
   {
     name: 'linkdin',
-    label: 'LinkedIn',
+    label: 'Linkedin',
     type: 'text',
     rules: {
       required: {
         value: true,
-         message: "this field is req"
+         message: "Please fill out this field"
       },
     },
   },

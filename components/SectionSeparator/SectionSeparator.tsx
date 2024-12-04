@@ -11,6 +11,8 @@ import {
   CardHeaderProps,
   CardContentProps,
 } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
 //IMP-DEPENDENCY
 //---------------------------------------------------------------------------------
 
@@ -57,44 +59,75 @@ const SectionSeparator = ({
   ...others
 }: SeparatorProps) => {
 
-  
+  const theme = createTheme();
 
   return (
-    <Card
-      elevation={elevation || 0}
-      {...others}>
-      {/* card header and action */}
-      {!darkTitle && title && (
-        <CardHeader
-          className='px-10 pt-20 pb-14'
-          sx={headerSX}
-          titleTypographyProps={{ variant: 'h3' }}
-          title={title}
-          action={secondary}
-          subheader={subheader}
-        />
-      )}
-      {darkTitle && title && (
-        <CardHeader
-          className='px-10'
-          sx={headerSX}
-          title={<Typography variant='h3'>{title}</Typography>}
-          action={secondary}
-        />
-      )}
+    <ThemeProvider theme={theme}>
+      <Card
+        elevation={elevation || 0}
+        {...others}>
+        {/* card header and action */}
+        {!darkTitle && title && (
+          <CardHeader
+            className='px-10 pt-20 pb-14 text-center sm:text-start'
+            sx={headerSX}
+            titleTypographyProps={{ variant: 'h3' }}
+            subheaderTypographyProps={{
+              className: "mt-10 line-clamp-2 ",
+              sx: {
+                maxWidth: '100%',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                display: '-webkit-box',
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: 'vertical'
+              }
+            }}
+            title={
 
-      {/* content & header divider */}
-      {title && divider && <Divider />}
+              title
+            }
+            action={secondary}
+            subheader={subheader}
+          />
+        )}
+        {darkTitle && title && (
+          <CardHeader
+            className='px-10'
+            sx={headerSX}
+            subheaderTypographyProps={{
+              className: "mt-10 line-clamp-2",
+              sx: {
+                maxWidth: '100%',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                display: '-webkit-box',
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: 'vertical'
+              }
+            }}
+            title={
+              <Typography variant='h3'>{title}</Typography>
+            }
+            action={secondary}
+          />
+        )}
 
-      {/* card content */}
-      {content && (
-        <CardContent className='px-10 !pb-10 pt-15' sx={contentSX}>
-          {children}
-        </CardContent>
-      )}
-      {!content && children}
-    </Card>
+        {/* content & header divider */}
+        {title && divider && <Divider />}
+
+        {/* card content */}
+        {content && (
+          <CardContent className='px-10 !pb-10 pt-15' sx={contentSX}>
+            {children}
+          </CardContent>
+        )}
+        {!content && children}
+      </Card>
+    </ThemeProvider>
   );
 };
 
 export default SectionSeparator;
+
+

@@ -11,7 +11,7 @@ export const basicFields: FieldConfig[] = [
     rules: {
       required: {
         value: true,
-         message: "this field is req"
+         message: "Please fill out this field"
       }, 
     },
   },
@@ -22,7 +22,7 @@ export const basicFields: FieldConfig[] = [
     rules: {
       required: {
         value: true,
-         message: "this field is req"
+         message: "Please fill out this field"
       },
     },
   },
@@ -33,7 +33,7 @@ export const basicFields: FieldConfig[] = [
     rules: {
       required: {
         value: true,
-         message: "this field is req"
+         message: "Please fill out this field"
       },
     },
   },
@@ -44,7 +44,7 @@ export const basicFields: FieldConfig[] = [
     rules: {
       required: {
         value: true,
-         message: "this field is req"
+         message: "Please fill out this field"
       },
     },
   },
@@ -55,7 +55,7 @@ export const basicFields: FieldConfig[] = [
     rules: {
       required: {
         value: true,
-         message: "this field is req"
+         message: "Please fill out this field"
       },
     },
   },

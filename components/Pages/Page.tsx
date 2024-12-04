@@ -4,31 +4,37 @@ import { forwardRef, ReactNode } from 'react';
 import Head from 'next/head';
 
 // material-ui
-import { Box, Typography } from '@mui/material';
+import { Box,  Typography } from '@mui/material';
 
 // ==============================|| Page - SET TITLE & META TAGS ||============================== //
 
-const Page = forwardRef<HTMLDivElement, PageProps>(({ children,title, meta,titleComponent, ...other }, ref) => (
-  <Box className="flex flex-col justify-center ">
-    <Head>
-      {meta}
-    </Head>
-    <Box className="sm:my-16 flex h-20 text-md font-semibold my-15 flex-col w-full md:my-15 ">
-      <Typography className={'text-3xl font-semibold'}>{title}</Typography>
-      {titleComponent}
+const Page = forwardRef<HTMLDivElement, PageProps>(({ children, title, meta, titleComponent, ...other }, ref) => {
+
+  return (
+    <Box className="flex flex-col justify-center w-full">
+      <Head>
+        {meta}
+      </Head>
+      <Box className="items-center sm:items-start sm:my-16 flex   text-md font-semibold my-16 flex-col w-full md:my-16 mb-16">
+        <Typography className={'text-3xl font-semibold'}>
+             {title }
+        </Typography>
+        {titleComponent}
+        
+      </Box>
+      <Box ref={ref} {...other}>
+        {children}
+      </Box>
     </Box>
-    <Box ref={ref} {...other}>
-      {children}
-    </Box>
-  </Box>
-));
+  );
+});
 
 //-------------------------------------------------------------------------------------
 interface PageProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
-  title?:string;
+  title?: string;
   meta?: ReactNode;
-  titleComponent?:ReactNode;
+  titleComponent?: ReactNode;
 }
 
 Page.displayName = 'Page';

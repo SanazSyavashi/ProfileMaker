@@ -2,7 +2,7 @@
 //NODE_MODULES
 import React, { useEffect, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { Box } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 //--------------------------------------------------------
 
 // DEPENDENCY
@@ -14,9 +14,9 @@ import Dropdown from '@/components/Inputs/Dropdown/Dropdown';
 import ChipInput from '@/components/Inputs/ChipInput/ChipInput';
 import NumberInput from '../Inputs/NumberInput/NumberInput';
 import TextAreaInput from '../Inputs/TextAreaInput/TextAreaInput';
-import LoadingComponent from '../Loading/LoadingComponent';
 import FilePicker from '../Inputs/FilePicker/FilePicker';
 import GenericSnackbar from '../Snackbar/GenericSnackbar';
+import FormSkeleton from '../FormSkeleton/FormSkeleton';
 //-----------------------------------------------------------------
 
 export interface FieldConfig {
@@ -37,8 +37,10 @@ interface GeneralFormProps {
 
 const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSubmit}) => {
   const { handleSubmit, control, reset ,setValue} = useForm({ defaultValues });
-  const [isLoading, setIsLoading] = useState(false);
+   const [isLoading, setIsLoading] = useState(false);
   const [isSnackbarOpen, setIsSnackbarOpen] = useState(false)
+  const [isSkeletonVisible, setIsSkeletonVisible] = useState(true);
+
 
 //SET DEFAULT VALUE IN FORM
   useEffect(() => {
@@ -46,6 +48,12 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSub
       Object.keys(defaultValues).forEach((key) => {
         setValue(key, defaultValues[key]);
       });
+      const timer = setTimeout(() => {
+        setIsSkeletonVisible(false); // Hide Skeleton after 2 seconds
+      }, 2000);
+    
+      // Cleanup timer on component unmount
+      return () => clearTimeout(timer);
     }
   }, [defaultValues, setValue]);
 
@@ -54,7 +62,7 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSub
     setIsLoading(true);
     onSubmit(data);
     setTimeout(() => {
-      setIsLoading(false);
+     setIsLoading(false);
       setIsSnackbarOpen(true)
     }, 2000);
   };
@@ -68,7 +76,9 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSub
   return(
     <>
       <form onSubmit={handleSubmit(handleFormSubmit)} className="flex flex-col gap-4 p-4 max-w-lg mx-auto">
-      {Object.keys(defaultValues).length === 0? <LoadingComponent/>:
+      {isSkeletonVisible || Object.keys(defaultValues).length === 0 ? (
+          <FormSkeleton rows={fields} isSingleLine={false} />
+        ) :
       <>
         {fields.map((field) => (
           <InputLabel
@@ -121,7 +131,6 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSub
                     return (
                       <DatePicker
                         {...controllerField}
-                        label={`Select ${field.label}`}
                         error={fieldState.error}
                         onChangeValue={(newDate) => controllerField.onChange(newDate)}
                         name={field.name}
@@ -171,30 +180,41 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSub
           </InputLabel>
         ))}
 
-        <Box className="flex flex-row justify-between">
-          <GButton
-            color="primary"
-            variant="contained"
-            isLoading={isLoading}
-            type="submit"
-            className="w-5/12"
-            title="Submit"
-          >
-            Submit
-          </GButton>
+<Box className="flex flex-col sm:flex-col lg:flex-row justify-between gap-4">
+  {isLoading ? (
+    <GButton
+      color="primary"
+      variant="contained"
+      type="submit"
+      className="w-full sm:w-full lg:w-5/12"
+    >
+      <CircularProgress
+        color="inherit"
+        size="1rem"
+        classes={{ root: 'mx-6' }}
+      />
+    </GButton>
+  ) : (
+    <GButton
+      color="primary"
+      variant="contained"
+      type="submit"
+      className="w-full sm:w-full lg:w-5/12"
+      title="Submit"
+    />
+  )}
 
-          <GButton
-            link='/Preview'
-            color="error"
-            variant="contained"
-            type="button"
-            className="w-5/12"
-            title="cancel"
-            onClick={cancelHandler}
-          >
-            Discard Changes
-          </GButton>
-        </Box>
+  <GButton
+    link="/Preview"
+    color="error"
+    variant="contained"
+    type="button"
+    className="w-full sm:w-full lg:w-5/12"
+    title="Cancel"
+    onClick={cancelHandler}
+  />
+</Box>
+
  </> }
       </form>
       <GenericSnackbar severity={'success'} text={'Data saved successfully'} open={isSnackbarOpen} handleClose={function (): void {

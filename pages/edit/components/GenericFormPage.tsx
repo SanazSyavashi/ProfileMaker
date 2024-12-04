@@ -5,7 +5,7 @@ import GeneralForm from '@/components/GeneralForm/GeneralForm';
 import { saveFile } from '../util/saveData';
 import GenericSnackbar from '@/components/Snackbar/GenericSnackbar';
 import { readFile } from '../util/readData';
-import getFieldsByFileName from '../fields/getField';
+import getFieldsByFileName from '../Fields/getField';
 // ---------------------------------------------------------------
 export interface GenericFormPageProps {
   fileName: string;

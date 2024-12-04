@@ -19,11 +19,11 @@ export async function POST(req: Request) {
     if (fs.existsSync(filePath)) {
       const fileData = await fs.promises.readFile(filePath, 'utf-8');
       const parsedData = JSON.parse(fileData); 
-      return NextResponse.json({ message: 'File read successfully', data: parsedData,isLoading: false });
+      return NextResponse.json({ message: 'File read successfully', data: parsedData});
     } else {
-      return NextResponse.json({ message: 'File not found',isLoading: false }, { status: 404 });
+      return NextResponse.json({ message: 'File not found' }, { status: 404 });
     }
   } catch (error:any) {
-    return NextResponse.json({ message: 'Error reading file', error: error.message,isLoading: false }, { status: 500 });
+    return NextResponse.json({ message: 'Error reading file', error: error.message}, { status: 500 });
   }
 }

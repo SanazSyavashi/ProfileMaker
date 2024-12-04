@@ -11,7 +11,7 @@ export const professionalFields : FieldConfig[]= [
     rules: {
       required: {
         value: true,
-         message: "this field is req"
+         message: "Please fill out this field"
       },
     },
   },
@@ -22,7 +22,7 @@ export const professionalFields : FieldConfig[]= [
     rules: {
       required: {
         value: true,
-         message: "this field is req"
+         message: "Please fill out this field"
       },
     },
   },
@@ -33,7 +33,7 @@ export const professionalFields : FieldConfig[]= [
     rules: {
       required: {
         value: true,
-         message: "this field is req"
+         message: "Please fill out this field"
       },
     },
   },
@@ -54,7 +54,7 @@ export const professionalFields : FieldConfig[]= [
     rules: {
       required: {
         value: true,
-         message: "this field is req"
+         message: "Please fill out this field"
       },
     },
   },
