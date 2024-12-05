@@ -13,6 +13,10 @@ export const basicFields: FieldConfig[] = [
         value: true,
          message: "Please fill out this field"
       }, 
+      pattern: { 
+        value: /^[A-Za-z]+$/,
+        message: "Only English letters are allowed"
+      },
     },
   },
   {
@@ -23,6 +27,10 @@ export const basicFields: FieldConfig[] = [
       required: {
         value: true,
          message: "Please fill out this field"
+      },
+      pattern: { 
+        value: /^[A-Za-z]+$/,
+        message: "Only English letters are allowed"
       },
     },
   },
@@ -46,6 +54,10 @@ export const basicFields: FieldConfig[] = [
         value: true,
          message: "Please fill out this field"
       },
+      pattern: {
+        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+        message: "Invalid email address"
+      }
     },
   },
   {
@@ -57,6 +69,8 @@ export const basicFields: FieldConfig[] = [
         value: true,
          message: "Please fill out this field"
       },
+        minLength: { value: 6, message: "Minimum 6 characters required" },
+        maxLength: { value: 20, message: "Maximum 20 characters allowed" }
     },
   },
 ];

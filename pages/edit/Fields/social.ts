@@ -51,6 +51,10 @@ export const socialFields: FieldConfig[] = [
     type: 'text',
     rules: {
       required: false,
+      pattern: {
+        value: /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/,
+        message: "Invalid website URL"
+      }
     },
   },
 ];
