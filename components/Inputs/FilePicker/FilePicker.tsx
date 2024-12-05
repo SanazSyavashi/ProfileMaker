@@ -66,6 +66,7 @@ const FilePicker = (props: Props) => {
         if (onChangeValue) {
           onChangeValue(fileName); 
         }
+        window.dispatchEvent(new Event('profileImageChange'));
 
         setTimeout(() => {
           setUploading(false);
@@ -83,8 +84,7 @@ const FilePicker = (props: Props) => {
       reader.readAsDataURL(selectedFile);
       
     } catch (err) {
-      console.error('Error saving file:', err);
-      setUploadError('Error saving file');
+      setUploadError('Error saving file'+err);
       setUploading(false);
       setIsLoading(false);
     }
@@ -128,8 +128,8 @@ const FilePicker = (props: Props) => {
       />
       {isLoading ? (
         <GButton
-          className="mt-2 p-2 bg-blue-500 text-white rounded pt-4 disabled:opacity-50"
-          title="Save File"
+          className="mt-2 p-2 bg-blue-500 text-white rounded pt-4 disabled:opacity-50 h-12"
+          title="Save Image"
         >
           <CircularProgress
             color="inherit"
@@ -141,7 +141,7 @@ const FilePicker = (props: Props) => {
         <GButton
           onClick={handleUpload}
           disabled={uploading || !selectedFile}
-          className="mt-2 p-2 bg-blue-500 text-white rounded disabled:opacity-50"
+          className="h-10 mt-2 p-2 bg-blue-500 text-white rounded disabled:opacity-50"
           title="Save File"
         />
       )}

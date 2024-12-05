@@ -11,7 +11,7 @@ import { Box,  Typography } from '@mui/material';
 const Page = forwardRef<HTMLDivElement, PageProps>(({ children, title, meta, titleComponent, ...other }, ref) => {
 
   return (
-    <Box className="flex flex-col justify-center w-full">
+    <Box className="px-5 py-5 flex flex-col justify-center w-full lg:px-20 py-10">
       <Head>
         {meta}
       </Head>

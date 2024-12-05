@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from 'react';
 // Dependencies
@@ -36,8 +37,6 @@ const GenericFormPage: React.FC<GenericFormPageProps> = ({ fileName }) => {
   //CALL FETCH FILE CONTENT ON FIRST OF LOAD AF EACH PAGE
   useEffect(() => {
     fetchFileContent();
-    //SHOW ERROR IF ERROR HAPPENED DURING AN API CALL
-    console.log({ errorMessage });
   }, []);
 
   //HANDLE SAVING DATA OF FORM

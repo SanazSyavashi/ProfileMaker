@@ -13,8 +13,14 @@ const Preview: React.FC = () => {
 
   return (
 
-    <SectionSeparator title={"Preview Profile"} subheader={<LinkEditButton />}>
-      <ImageListComponent/>
+    <SectionSeparator title={"Preview Profile"} subheader={
+      <div className="w-full flex flex-col  items-center sm:items-start mb-5">
+            <div className="w-60 flex flex-col  justify-center items-center mb-5">
+            <ImageListComponent />
+            <LinkEditButton />
+            </div>
+            </div>
+    }>
       {
         formsRow.map((row) => <InfoPage fileName={row.fileName} type={row.type} multiRow={row.multiRow} title={row.title} key={row.type} />)
       }

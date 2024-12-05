@@ -12,7 +12,7 @@ const ProfilePicture = () => {
     const handleStorageChange = () => {
       const updatedImage = localStorage.getItem('uploadPic');
       if (updatedImage) {
-        setImageSrc(updatedImage); 
+        setImageSrc(updatedImage);
       }
     };
 
@@ -21,7 +21,20 @@ const ProfilePicture = () => {
     return () => {
       window.removeEventListener('storage', handleStorageChange);
     };
-  }, []); 
+  }, []);
+
+  useEffect(() => {
+    const updateImage = () => {
+      const storedImage = localStorage.getItem('uploadPic');
+      if (storedImage) {
+        setImageSrc(storedImage);
+      }
+    };
+  
+    window.addEventListener('profileImageChange', updateImage);
+    return () => window.removeEventListener('profileImageChange', updateImage);
+  }, []);
+  
 
   return (
     <div className="justify-center mt-10 flex sm:justify-start items-center">
@@ -29,10 +42,10 @@ const ProfilePicture = () => {
         <img
           src={imageSrc}
           alt="Profile"
-          className="rounded-full w-36 h-36 object-cover"
+          className="rounded-full w-60 h-60 object-cover"
         />
       ) : (
-        <div className="w-36 h-36 bg-gray-300 rounded-full flex justify-center items-center">
+        <div className="w-60 h-60 bg-gray-300 rounded-full flex justify-center items-center">
           <span className="text-white">No Image</span>
         </div>
       )}

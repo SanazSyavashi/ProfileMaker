@@ -49,10 +49,9 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSub
         setValue(key, defaultValues[key]);
       });
       const timer = setTimeout(() => {
-        setIsSkeletonVisible(false); // Hide Skeleton after 2 seconds
-      }, 2000);
+        setIsSkeletonVisible(false); 
+      }, 500);
     
-      // Cleanup timer on component unmount
       return () => clearTimeout(timer);
     }
   }, [defaultValues, setValue]);
@@ -72,7 +71,6 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSub
     reset()
 
   }
-  console.log(defaultValues)
   return(
     <>
       <form onSubmit={handleSubmit(handleFormSubmit)} className="flex flex-col gap-4 p-4 max-w-lg mx-auto">
@@ -179,14 +177,15 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSub
             />
           </InputLabel>
         ))}
+        </> }
 
-<Box className="flex flex-col sm:flex-col lg:flex-row justify-between gap-4">
+<Box className="flex flex-col items-center sm:flex-row lg:flex-row  justify-start gap-4">
   {isLoading ? (
     <GButton
       color="primary"
       variant="contained"
       type="submit"
-      className="w-full sm:w-full lg:w-5/12"
+      className="w-full sm:w-4/5 h-10 lg:w-4/5 h-12"
     >
       <CircularProgress
         color="inherit"
@@ -199,7 +198,7 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSub
       color="primary"
       variant="contained"
       type="submit"
-      className="w-full sm:w-full lg:w-5/12"
+      className="w-full sm:w-4/5 h-10 lg:w-4/5 h-12"
       title="Submit"
     />
   )}
@@ -209,13 +208,12 @@ const GeneralForm: React.FC<GeneralFormProps> = ({ fields, defaultValues , onSub
     color="error"
     variant="contained"
     type="button"
-    className="w-full sm:w-full lg:w-5/12"
+    className="w-full  sm:w-4/5 h-10 lg:w-4/5 h-12"
     title="Cancel"
     onClick={cancelHandler}
   />
 </Box>
 
- </> }
       </form>
       <GenericSnackbar severity={'success'} text={'Data saved successfully'} open={isSnackbarOpen} handleClose={function (): void {
         setIsSnackbarOpen(false)

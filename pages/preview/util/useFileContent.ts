@@ -16,8 +16,7 @@ const useFileContent = (fileName: string) => {
       const contentData = content.content;
       setFileContent(contentData);
     } catch (err) {
-      setError('Error loading file content');
-      console.error(err);
+      setError('Error loading file content' + err);
     }
   }, [fileName]);
 
