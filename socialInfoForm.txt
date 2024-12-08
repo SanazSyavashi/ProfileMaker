@@ -1,1 +1,1 @@
-{"content":{"twitter":"sanazsyavashi","github":"sanazsyavashi.git","linkdin":"sanazsyavashi.git.linkdin","instagram":"sanazsyavashi.insta","personal":""}}
+{"content":{"twitter":"sanazsyavashi","github":"sanazsyavashi.git","linkdin":"sanazsyavashi.git.linkdin","instagram":"sanazsyavashi.insta","personal":"https://www.linkedin.com/"}}

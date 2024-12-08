@@ -6,8 +6,8 @@ import Page from "@/components/Pages/Page";
 import Row from "@/components/Row/Row";
 import MultiRow from "@/components/Row/MultiRow";
 import useFileContent from "../util/useFileContent";
-import FormSkeleton from "@/components/FormSkeleton/FormSkeleton";
 import getRowByType from "../util/getRowByType ";
+import FormSkeleton from "@/components/FormSkeleton/FormSkeleton";
 //-------------------------------------------------------
 
 interface InfoPageProps {

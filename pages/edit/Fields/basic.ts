@@ -14,7 +14,7 @@ export const basicFields: FieldConfig[] = [
          message: "Please fill out this field"
       }, 
       pattern: { 
-        value: /^[A-Za-z]+$/,
+        value: /^[A-Za-z\s]+$/,
         message: "Only English letters are allowed"
       },
     },
@@ -29,7 +29,7 @@ export const basicFields: FieldConfig[] = [
          message: "Please fill out this field"
       },
       pattern: { 
-        value: /^[A-Za-z]+$/,
+        value: /^[A-Za-z\s]+$/,
         message: "Only English letters are allowed"
       },
     },

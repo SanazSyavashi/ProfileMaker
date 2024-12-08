@@ -17,7 +17,7 @@ const FormSkeleton: React.FC<FormSkeletonProps> = ({ isSingleLine, rows }) => {
               <Skeleton variant="text" width={200}  height={40}/>
             </Grid>
             <Grid item>
-              <Skeleton variant="text" width={470} height={!isSingleLine ? 80:40}/>
+              <Skeleton variant="text"  height={!isSingleLine ? 80:40} className='w-[400px] sm:w-[470px]'/>
             </Grid>
           </Grid>
         </Grid>
